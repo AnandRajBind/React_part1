@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First React App</title>
+</head>
+<body>
+ <div id="root"> 
+
+ </div>
+
+ <!-- simple HTML element. html element actual ake DOM tree ka root node hota hai while react element ake  json object hota hai jo ki ake element ke property ko define karta hai. -->
+ <h1>
+HTML Element 
+ </h1>
+    <!-- React CDN Link -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<!-- React code  -->
+<script>
+    // react element (json object) example 
+/*
+{
+type:'button',
+props:{
+    children:'submit'
+    className:'btn btn-primary'
+}
+}
+*/
+/* React element is a just like json object.jo ki key value ke form me hota hai.*/
+
+// React.createElement(type, property,children ) name ka react method hai jiska use karke react element create karte hai.
+
+const Btn=()=>React.createElement("button",{id:btn}, React.createElement("span",{},"Submit"))
+
+const rootContainer=document.getElementById("root");
+const root =ReactDom.createRoot(rootContainer);
+root.render(Btn());
+
+</script>
+</body>
+</html>
